@@ -1,3 +1,14 @@
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+var input_string = '';
+
+process.stdin.on('data', function(chunk) {
+    input_string += chunk;
+});
+
+process.stdin.on("end", function () {
+    test(input_string)
+});
 
 const test = (input) => {
     const splited = input.split("\n")
@@ -15,10 +26,6 @@ const test = (input) => {
     if(minimumCost == 1001) {
         console.log("TLE")
     } else {
-        console.log(minimumCost)
+        console.log(String(minimumCost))
     }
 }
-
-test("3 70\n7 60\n1 80\n4 50")
-test("4 3\n1 1000\n2 4\n3 1000\n4 500")
-test("5 9˜\n25 8\n5 9\n4 10\n1000 1000\n6 1")

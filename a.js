@@ -1,9 +1,14 @@
-// 電車 A円
-// タクシー B/N円
-// N人
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+var input_string = '';
 
-// A × N
-// B/N × N = B
+process.stdin.on('data', function(chunk) {
+    input_string += chunk;
+});
+
+process.stdin.on("end", function () {
+    test(input_string)
+});
 
 const test = (input) => {
     let splitedInput = input.split(" ")
@@ -18,7 +23,3 @@ const test = (input) => {
         console.log(expensesOfTrain)
     }
 }
-
-test("4 2 9")
-test("4 2 7")
-test("4 2 8")

@@ -1,4 +1,14 @@
+process.stdin.resume();
+process.stdin.setEncoding('utf8');
+var input_string = '';
 
+process.stdin.on('data', function(chunk) {
+    input_string += chunk;
+});
+
+process.stdin.on("end", function () {
+    test(input_string)
+});
 
 const test = (input) => {
     const splitedInput = input.split("\n")
@@ -9,9 +19,5 @@ const test = (input) => {
             enableCount++
         }
     })
-    console.log(enableCount);
+    console.log(String(enableCount));
 }
-
-test("4 150\n150 140 100 200")
-test("1 500\n499")
-test("5 1\n100 200 300 400 500")
